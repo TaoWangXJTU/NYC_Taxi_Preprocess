@@ -21,7 +21,6 @@ We filtered each part of data set with two pre-processing stages, and then merge
 We supply filtering methods in pre-processing. The program is implemented in Scala with Spark.
 The example of pre-processing dataset of 2009 yellow taxi records is as bellow:
 ### stage 1
-#### 
 ```scala
 //header example:
 //2009 yellow : Array("Trip_Pickup_DateTime","Start_Lon","Start_Lat");
@@ -41,7 +40,7 @@ val outDir = s"${year}_Month${minMonth}-${maxMonth}"
 month_limited_data.repartition(1).write.csv(s"$output/${outDir}")
 
 ```
-#### stage 2
+### stage 2
 ```scala
 val fileName:String="/home/iotdatalab/WFC/dataset/filtered_taxi/2009-Month1-12/part-00000"
 val output:String="path/to/output/densityFilteredData"
